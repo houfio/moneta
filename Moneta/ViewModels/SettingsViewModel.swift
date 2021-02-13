@@ -28,8 +28,8 @@ class SettingsViewModel: ObservableObject {
     var assets: Assets
     
     init() {
-        self.exchanges = SettingsViewModel.decode(file: "exchanges.json", type: Exchanges.self)
-        self.assets = SettingsViewModel.decode(file: "assets.json", type: Assets.self)
+        self.exchanges = Bundle.main.decode("exchanges.json", type: Exchanges.self)
+        self.assets = Bundle.main.decode("assets.json", type: Assets.self)
         
         if self.exchange == nil {
             self.exchange = "kraken"
@@ -38,15 +38,6 @@ class SettingsViewModel: ObservableObject {
         if self.currency == nil {
             self.currency = "eur"
         }
-    }
-    
-    private static func decode<T: Decodable>(file: String, type: T.Type) -> T {
-        let decoder = JSONDecoder()
-        let url = Bundle.main.url(forResource: file, withExtension: nil)!
-        let data = try! Data(contentsOf: url)
-        let result = try! decoder.decode(type, from: data)
-        
-        return result
     }
     
     func activeExchanges() -> [Exchange] {

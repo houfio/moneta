@@ -1,19 +1,17 @@
 import SwiftUI
 
-class SearchBar: NSObject, ObservableObject {
+class SearchBar: NSObject, ObservableObject, UISearchResultsUpdating {
     @Published var text = ""
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override init() {
         super.init()
-
+        
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchResultsUpdater = self
     }
-}
-
-extension SearchBar: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let searchBarText = searchController.searchBar.text {
             self.text = searchBarText
