@@ -20,12 +20,12 @@
 		D77F4FFA25D6CE4F005B12A2 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F4FF925D6CE4F005B12A2 /* ExchangeModel.swift */; };
 		D77F4FFD25D6CFC7005B12A2 /* ExchangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F4FFC25D6CFC7005B12A2 /* ExchangeSheet.swift */; };
 		D77F500025D6D4FE005B12A2 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77F4FFF25D6D4FE005B12A2 /* SelectButton.swift */; };
+		D791853B25D85BD9006174DE /* assets.json in Resources */ = {isa = PBXBuildFile; fileRef = D791853A25D85BD9006174DE /* assets.json */; };
+		D791854025D85C25006174DE /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791853F25D85C25006174DE /* AssetModel.swift */; };
 		D79FDF3825D681B300A49FC3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FDF3725D681B300A49FC3 /* SettingsViewModel.swift */; };
 		D79FDF3B25D6933700A49FC3 /* ListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FDF3A25D6933700A49FC3 /* ListButton.swift */; };
 		D79FDF3E25D69EF700A49FC3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FDF3D25D69EF700A49FC3 /* SearchBar.swift */; };
 		D79FDF4225D6A10900A49FC3 /* SearchBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FDF4125D6A10900A49FC3 /* SearchBarModifier.swift */; };
-		D79FDF4525D6A30E00A49FC3 /* PairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FDF4425D6A30E00A49FC3 /* PairModel.swift */; };
-		D79FDF4A25D6C5AB00A49FC3 /* pairs.json in Resources */ = {isa = PBXBuildFile; fileRef = D79FDF4825D6C5AA00A49FC3 /* pairs.json */; };
 		D79FDF4B25D6C5AB00A49FC3 /* ohlc.json in Resources */ = {isa = PBXBuildFile; fileRef = D79FDF4925D6C5AB00A49FC3 /* ohlc.json */; };
 		D7A4FD1925D5CDFD00ECCB31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7A4FD1B25D5CDFD00ECCB31 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -46,12 +46,12 @@
 		D77F4FF925D6CE4F005B12A2 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 		D77F4FFC25D6CFC7005B12A2 /* ExchangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeSheet.swift; sourceTree = "<group>"; };
 		D77F4FFF25D6D4FE005B12A2 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		D791853A25D85BD9006174DE /* assets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = assets.json; sourceTree = "<group>"; };
+		D791853F25D85C25006174DE /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		D79FDF3725D681B300A49FC3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D79FDF3A25D6933700A49FC3 /* ListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButton.swift; sourceTree = "<group>"; };
 		D79FDF3D25D69EF700A49FC3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D79FDF4125D6A10900A49FC3 /* SearchBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarModifier.swift; sourceTree = "<group>"; };
-		D79FDF4425D6A30E00A49FC3 /* PairModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairModel.swift; sourceTree = "<group>"; };
-		D79FDF4825D6C5AA00A49FC3 /* pairs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pairs.json; sourceTree = "<group>"; };
 		D79FDF4925D6C5AB00A49FC3 /* ohlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ohlc.json; sourceTree = "<group>"; };
 		D7A4FD1A25D5CDFD00ECCB31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D7A4FD1D25D5CE1300ECCB31 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 		D74C4BEB25D5C81200266F4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D79FDF4425D6A30E00A49FC3 /* PairModel.swift */,
 				D77F4FF925D6CE4F005B12A2 /* ExchangeModel.swift */,
+				D791853F25D85C25006174DE /* AssetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,9 +170,9 @@
 		D79FDF4725D6C58700A49FC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D791853A25D85BD9006174DE /* assets.json */,
 				D77F4FF625D6CE37005B12A2 /* exchanges.json */,
 				D79FDF4925D6C5AB00A49FC3 /* ohlc.json */,
-				D79FDF4825D6C5AA00A49FC3 /* pairs.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,9 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74C4BD225D5B69300266F4F /* Preview Assets.xcassets in Resources */,
-				D79FDF4A25D6C5AB00A49FC3 /* pairs.json in Resources */,
 				D77F4FF725D6CE37005B12A2 /* exchanges.json in Resources */,
 				D7A4FD1925D5CDFD00ECCB31 /* Localizable.strings in Resources */,
+				D791853B25D85BD9006174DE /* assets.json in Resources */,
 				D79FDF4B25D6C5AB00A49FC3 /* ohlc.json in Resources */,
 				D74C4BCF25D5B69300266F4F /* Assets.xcassets in Resources */,
 			);
@@ -262,9 +262,9 @@
 				D77F4FFD25D6CFC7005B12A2 /* ExchangeSheet.swift in Sources */,
 				D77F500025D6D4FE005B12A2 /* SelectButton.swift in Sources */,
 				D77F4FFA25D6CE4F005B12A2 /* ExchangeModel.swift in Sources */,
-				D79FDF4525D6A30E00A49FC3 /* PairModel.swift in Sources */,
 				D74C4BE225D5C58000266F4F /* PortfolioView.swift in Sources */,
 				D77F4FF425D6CD4E005B12A2 /* CurrencySheet.swift in Sources */,
+				D791854025D85C25006174DE /* AssetModel.swift in Sources */,
 				D79FDF3825D681B300A49FC3 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ struct SettingsView: View {
                 .sheet(isPresented: self.$viewModel.showExchanges) {
                     ExchangeSheet(viewModel: self.viewModel)
                 }
-                ListButton(label: "currency", value: self.viewModel.currency!.uppercased(), action: {
+                ListButton(label: "currency", value: self.viewModel.currentCurrency()!.symbol.uppercased(), action: {
                     self.viewModel.showCurrencies.toggle()
                 })
                 .sheet(isPresented: self.$viewModel.showCurrencies) {

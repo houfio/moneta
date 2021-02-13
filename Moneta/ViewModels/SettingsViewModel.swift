@@ -25,11 +25,11 @@ class SettingsViewModel: ObservableObject {
     @Published var showCoins = false
     
     var exchanges: Exchanges
-    var pairs: Pairs
+    var assets: Assets
     
     init() {
         self.exchanges = SettingsViewModel.decode(file: "exchanges.json", type: Exchanges.self)
-        self.pairs = SettingsViewModel.decode(file: "pairs.json", type: Pairs.self)
+        self.assets = SettingsViewModel.decode(file: "assets.json", type: Assets.self)
         
         if self.exchange == nil {
             self.exchange = "kraken"
@@ -52,8 +52,8 @@ class SettingsViewModel: ObservableObject {
     func activeExchanges() -> [Exchange] {
         self.exchanges.result.filter { exchange in
             exchange.active
-        }.sorted {
-            $0.symbol < $1.symbol
+        }.sorted { a, b in
+            a.symbol < b.symbol
         }
     }
     
@@ -63,13 +63,17 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    func currencies() -> [String] {
-        let currencies = self.pairs.result.filter { pair in
-            pair.base.fiat
-        }.map { pair in
-            pair.base.symbol
+    func fiatCurrencies() -> [Asset] {
+        self.assets.result.filter { asset in
+            asset.fiat
+        }.sorted { a, b in
+            a.symbol < b.symbol
         }
-        
-        return Array(Set(currencies)).sorted()
+    }
+    
+    func currentCurrency() -> Asset? {
+        self.fiatCurrencies().first { asset in
+            asset.symbol == self.currency
+        }
     }
 }
