@@ -5,8 +5,4 @@
 "currency" = "Currency";
 "currencies" = "Currencies";
 "range" = "Range";
-"ranges" = "Ranges";
-"change_1h" = "Change 1 Hour";
-"change_24h" = "Change 24 Hours";
-"change_7d" = "Change 7 Days";
 "show_amounts" = "Show amounts";

@@ -8,6 +8,12 @@ class StateService {
         }
     }
 
+    @Published var range = UserDefaults.standard.string(forKey: "range") {
+        didSet {
+            UserDefaults.standard.set(range, forKey: "range")
+        }
+    }
+
     @Published var showAmounts = UserDefaults.standard.bool(forKey: "showAmounts") {
         didSet {
             UserDefaults.standard.set(showAmounts, forKey: "showAmounts")
@@ -25,6 +31,10 @@ class StateService {
             currency = currencies.data.first { currency in
                 currency.symbol == "EUR"
             }!.id
+        }
+
+        if range == nil {
+            range = "24h"
         }
     }
 }

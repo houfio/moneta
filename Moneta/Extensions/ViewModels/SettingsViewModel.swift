@@ -9,6 +9,8 @@ extension SettingsView {
         @Published var showRanges = false
         @Published var showCoins = false
 
+        let ranges = ["1h", "24h", "7d"]
+
         func currentCurrency() -> Currency? {
             state.currencies.data.first { currency in
                 isCurrentCurrency(currency)

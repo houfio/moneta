@@ -12,17 +12,15 @@ struct SettingsView: View {
                     .sheet(isPresented: self.$viewModel.showCurrencies) {
                         CurrencySheet(viewModel: viewModel)
                     }
-                ListButton(label: "range", value: viewModel.currentCurrency()!.symbol, action: {
-                    viewModel.showRanges.toggle()
-                })
-                    .actionSheet(isPresented: self.$viewModel.showRanges) {
-                        ActionSheet(title: Text("ranges"), buttons: [
-                            .default(Text("change_1h")),
-                            .default(Text("change_24h")),
-                            .default(Text("change_7d")),
-                            .cancel()
-                        ])
+                HStack {
+                    Text("range")
+                    Picker("range", selection: $viewModel.state.range) {
+                        ForEach(viewModel.ranges, id: \.self) { range in
+                            Text(range).tag(range as String?)
+                        }
                     }
+                        .pickerStyle(SegmentedPickerStyle())
+                }
             }
             Section(header: Text("portfolio")) {
                 Toggle(isOn: self.$viewModel.state.showAmounts) {

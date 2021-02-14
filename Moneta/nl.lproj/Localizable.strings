@@ -4,9 +4,5 @@
 "general" = "Algemeen";
 "currency" = "Valuta";
 "currencies" = "Valuta's";
-"range" = "Tijdbereik";
-"ranges" = "Tijdbereiken";
-"change_1h" = "Verandering 1 Uur";
-"change_24h" = "Verandering 24 Uur";
-"change_7d" = "Verandering 7 Dagen";
+"range" = "Tijdsbereik";
 "show_amounts" = "Bedragen weergeven";
