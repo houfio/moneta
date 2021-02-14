@@ -6,7 +6,7 @@ extension Bundle {
         let url = self.url(forResource: file, withExtension: nil)!
         let data = try! Data(contentsOf: url)
         let result = try! decoder.decode(type, from: data)
-        
+
         return result
     }
 }

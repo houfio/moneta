@@ -4,16 +4,16 @@ struct SelectButton: View {
     var label: String
     var value: Bool
     var action: () -> Void
-    
+
     var body: some View {
-        Button(action: self.action) {
+        Button(action: action) {
             HStack {
-                Text(self.label)
+                Text(label)
                 Spacer()
-                if self.value {
+                if value {
                     Image(systemName: "checkmark")
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.blue)
+                            .font(.system(size: 16, weight: .medium))
                 }
             }
         }

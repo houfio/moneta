@@ -8,7 +8,7 @@ struct PortfolioView: View {
                 Spacer()
             }
         }
-        .navigationTitle("portfolio")
+                .navigationTitle("portfolio")
     }
 }
 

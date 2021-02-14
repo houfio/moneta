@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView() {
+        TabView {
             Tab(icon: "chart.pie", label: "portfolio", tag: 0) {
                 PortfolioView()
             }
@@ -13,7 +13,6 @@ struct ContentView: View {
                 SettingsView()
             }
         }
-        .environmentObject(SettingsViewModel())
     }
 }
 
