@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A21FA477B2BFF50B54005E9 /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FE028D5949A2DA3A2859 /* StateService.swift */; };
+		D7410BB925D9593300771055 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D7410BB625D94E2400771055 /* Resolver */; };
+		D7410BBE25D95A4800771055 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7410BBD25D95A4800771055 /* Environment.swift */; };
 		D74C4BCB25D5B69300266F4F /* MonetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCA25D5B69300266F4F /* MonetaApp.swift */; };
 		D74C4BCD25D5B69300266F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCC25D5B69300266F4F /* ContentView.swift */; };
 		D74C4BCF25D5B69300266F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74C4BCE25D5B69300266F4F /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		1A21FE028D5949A2DA3A2859 /* StateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateService.swift; sourceTree = "<group>"; };
+		D7410BBC25D959B900771055 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D7410BBD25D95A4800771055 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D74C4BC725D5B69300266F4F /* Moneta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74C4BCA25D5B69300266F4F /* MonetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetaApp.swift; sourceTree = "<group>"; };
 		D74C4BCC25D5B69300266F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7410BB925D9593300771055 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +121,8 @@
 				D74C4BD025D5B69300266F4F /* Preview Content */,
 				D7A4FD1B25D5CDFD00ECCB31 /* Localizable.strings */,
 				1A21F1D76254136554BFE690 /* Services */,
+				D7410BBC25D959B900771055 /* Config.xcconfig */,
+				D7410BBD25D95A4800771055 /* Environment.swift */,
 			);
 			path = Moneta;
 			sourceTree = "<group>";
@@ -219,7 +226,7 @@
 			);
 			name = Moneta;
 			packageProductDependencies = (
-				D7410BB625D94E2400771055,
+				D7410BB625D94E2400771055 /* Resolver */,
 			);
 			productName = Moneta;
 			productReference = D74C4BC725D5B69300266F4F /* Moneta.app */;
@@ -250,7 +257,7 @@
 			);
 			mainGroup = D74C4BBE25D5B69300266F4F;
 			packageReferences = (
-				D7410BB525D94E2400771055,
+				D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = D74C4BC825D5B69300266F4F /* Products */;
 			projectDirPath = "";
@@ -297,6 +304,7 @@
 				D74C4BE225D5C58000266F4F /* PortfolioView.swift in Sources */,
 				D77F4FF425D6CD4E005B12A2 /* CurrencySheet.swift in Sources */,
 				D791854C25D860B0006174DE /* SearchViewModel.swift in Sources */,
+				D7410BBE25D95A4800771055 /* Environment.swift in Sources */,
 				D791854025D85C25006174DE /* AssetModel.swift in Sources */,
 				D79FDF3825D681B300A49FC3 /* SettingsViewModel.swift in Sources */,
 				1A21FA477B2BFF50B54005E9 /* StateService.swift in Sources */,
@@ -320,6 +328,7 @@
 /* Begin XCBuildConfiguration section */
 		D74C4BD425D5B69300266F4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7410BBC25D959B900771055 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -381,6 +390,7 @@
 		};
 		D74C4BD525D5B69300266F4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7410BBC25D959B900771055 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -436,6 +446,7 @@
 		};
 		D74C4BD725D5B69300266F4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7410BBC25D959B900771055 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -457,6 +468,7 @@
 		};
 		D74C4BD825D5B69300266F4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7410BBC25D959B900771055 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -500,7 +512,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D7410BB525D94E2400771055 = {
+		D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
 			requirement = {
@@ -511,9 +523,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D7410BB625D94E2400771055 = {
+		D7410BB625D94E2400771055 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D7410BB525D94E2400771055;
+			package = D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
