@@ -1,13 +1,11 @@
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List {
-            ForEach(viewModel.currencies(), id: \.id) { currency in
-                Text(currency.name)
-            }
+        List(viewModel.currencies(), id: \.id) { currency in
+            Text(currency.name)
         }
             .navigationTitle("coins")
             .modifier(SearchBarModifier(searchBar: viewModel))
