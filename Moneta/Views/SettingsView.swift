@@ -6,13 +6,7 @@ struct SettingsView: View {
     var body: some View {
         List {
             Section(header: Text("general")) {
-                ListButton(label: "exchange", value: viewModel.currentExchange()!.name, action: {
-                    viewModel.showExchanges.toggle()
-                })
-                    .sheet(isPresented: self.$viewModel.showExchanges) {
-                        ExchangeSheet(viewModel: viewModel)
-                    }
-                ListButton(label: "currency", value: viewModel.currentCurrency()!.symbol.uppercased(), action: {
+                ListButton(label: "currency", value: viewModel.currentCurrency()!.symbol, action: {
                     viewModel.showCurrencies.toggle()
                 })
                     .sheet(isPresented: self.$viewModel.showCurrencies) {

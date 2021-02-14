@@ -4,15 +4,13 @@ import Resolver
 class SearchViewModel: SearchBar {
     @Injected private var state: StateService
 
-    func currencies() -> [Asset] {
-        state.assets.result.filter { currency in
-            !currency.fiat && isSearched(currency)
-        }.sorted { a, b in
-            a.symbol < b.symbol
+    func currencies() -> [Cryptocurrency] {
+        state.cryptocurrencies.data.filter { currency in
+            isSearched(currency)
         }
     }
 
-    func isSearched(_ currency: Asset) -> Bool {
+    func isSearched(_ currency: Cryptocurrency) -> Bool {
         if text.isEmpty {
             return true
         }

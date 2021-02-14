@@ -6,9 +6,9 @@ struct CurrencySheet: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.fiatCurrencies(), id: \.id) { currency in
+                ForEach(viewModel.state.currencies.data, id: \.id) { currency in
                     SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency), action: {
-                        viewModel.state.currency = currency.symbol
+                        viewModel.state.currency = currency.id
                         viewModel.showCurrencies = false
                     })
                 }

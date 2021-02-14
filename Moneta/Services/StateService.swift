@@ -2,13 +2,7 @@ import Foundation
 import Resolver
 
 class StateService {
-    @Published var exchange = UserDefaults.standard.string(forKey: "exchange") {
-        didSet {
-            UserDefaults.standard.set(exchange, forKey: "exchange")
-        }
-    }
-
-    @Published var currency = UserDefaults.standard.string(forKey: "currency") {
+    @Published var currency = UserDefaults.standard.integer(forKey: "currency") {
         didSet {
             UserDefaults.standard.set(currency, forKey: "currency")
         }
@@ -20,19 +14,17 @@ class StateService {
         }
     }
 
-    var exchanges: Exchanges
-    var assets: Assets
+    var currencies: Currencies
+    var cryptocurrencies: Cryptocurrencies
 
     init() {
-        exchanges = Bundle.main.decode("exchanges.json", type: Exchanges.self)
-        assets = Bundle.main.decode("assets.json", type: Assets.self)
+        currencies = Bundle.main.decode("fiat.json", type: Currencies.self)
+        cryptocurrencies = Bundle.main.decode("listings.json", type: Cryptocurrencies.self)
 
-        if exchange == nil {
-            exchange = "kraken"
-        }
-
-        if currency == nil {
-            currency = "eur"
+        if currency == 0 {
+            currency = currencies.data.first { currency in
+                currency.symbol == "EUR"
+            }!.id
         }
     }
 }

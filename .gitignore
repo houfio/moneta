@@ -1,5 +1,6 @@
 .idea/
 .build/
 xcuserdata/
+Resources/
 .DS_store
 Config.xcconfig
