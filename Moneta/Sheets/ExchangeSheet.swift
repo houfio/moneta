@@ -13,8 +13,8 @@ struct ExchangeSheet: View {
                     })
                 }
             }
-                    .navigationBarTitle(Text("exchanges"), displayMode: .inline)
-                    .listStyle(DefaultListStyle())
+                .navigationBarTitle(Text("exchanges"), displayMode: .inline)
+                .listStyle(DefaultListStyle())
         }
     }
 }

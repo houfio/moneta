@@ -9,8 +9,8 @@ struct SearchView: View {
                 Text(currency.name)
             }
         }
-                .navigationTitle("coins")
-                .modifier(SearchBarModifier(searchBar: viewModel))
+            .navigationTitle("coins")
+            .modifier(SearchBarModifier(searchBar: viewModel))
     }
 }
 

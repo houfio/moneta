@@ -9,13 +9,13 @@ struct ListButton: View {
         Button(action: action) {
             HStack {
                 Text(label)
-                        .foregroundColor(.primary)
+                    .foregroundColor(.primary)
                 Spacer()
                 Text(value)
-                        .foregroundColor(Color(.systemGray))
+                    .foregroundColor(Color(.systemGray))
                 Image(systemName: "chevron.right")
-                        .font(.system(size: 14))
-                        .foregroundColor(Color(.systemGray2))
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(.systemGray2))
             }
         }
     }

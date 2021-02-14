@@ -13,8 +13,8 @@ struct CurrencySheet: View {
                     })
                 }
             }
-                    .navigationBarTitle(Text("currencies"), displayMode: .inline)
-                    .listStyle(DefaultListStyle())
+                .navigationBarTitle(Text("currencies"), displayMode: .inline)
+                .listStyle(DefaultListStyle())
         }
     }
 }

@@ -10,13 +10,13 @@ struct Tab<Content: View>: View {
         NavigationView {
             content()
         }
-                .tabItem {
-                    VStack {
-                        Image(systemName: icon)
-                        Text(label)
-                    }
+            .tabItem {
+                VStack {
+                    Image(systemName: icon)
+                    Text(label)
                 }
-                .tag(tag)
+            }
+            .tag(tag)
     }
 }
 
@@ -26,7 +26,7 @@ struct Tab_Previews: PreviewProvider {
             Tab(icon: "house", label: "Home", tag: 0) {
                 VStack {
                     Text("Hello, World!")
-                            .navigationBarTitle("Navigation")
+                        .navigationBarTitle("Navigation")
                     Spacer()
                 }
             }

@@ -12,8 +12,8 @@ struct SelectButton: View {
                 Spacer()
                 if value {
                     Image(systemName: "checkmark")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.blue)
+                        .font(.system(size: 16, weight: .medium))
                 }
             }
         }
