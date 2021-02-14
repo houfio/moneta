@@ -1,7 +1,7 @@
 import Foundation
 import Resolver
 
-class StateService {
+class StateService: ObservableObject {
     @Published var currency = UserDefaults.standard.integer(forKey: "currency") {
         didSet {
             UserDefaults.standard.set(currency, forKey: "currency")
