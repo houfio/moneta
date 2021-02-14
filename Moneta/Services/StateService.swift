@@ -18,8 +18,8 @@ class StateService {
     var cryptocurrencies: Cryptocurrencies
 
     init() {
-        currencies = Bundle.main.decode("fiat.json", type: Currencies.self)
-        cryptocurrencies = Bundle.main.decode("listings.json", type: Cryptocurrencies.self)
+        currencies = Bundle.main.decode("fiat.json")
+        cryptocurrencies = Bundle.main.decode("listings.json")
 
         if currency == 0 {
             currency = currencies.data.first { currency in
