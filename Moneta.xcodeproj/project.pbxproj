@@ -24,7 +24,6 @@
 		D74C4BCB25D5B69300266F4F /* MonetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCA25D5B69300266F4F /* MonetaApp.swift */; };
 		D74C4BCD25D5B69300266F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCC25D5B69300266F4F /* ContentView.swift */; };
 		D74C4BCF25D5B69300266F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74C4BCE25D5B69300266F4F /* Assets.xcassets */; };
-		D74C4BD225D5B69300266F4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74C4BD125D5B69300266F4F /* Preview Assets.xcassets */; };
 		D74C4BE225D5C58000266F4F /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE125D5C58000266F4F /* PortfolioView.swift */; };
 		D74C4BE625D5C64500266F4F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE525D5C64500266F4F /* SettingsView.swift */; };
 		D74C4BE925D5C65900266F4F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE825D5C65900266F4F /* SearchView.swift */; };
@@ -54,7 +53,6 @@
 		D74C4BCA25D5B69300266F4F /* MonetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetaApp.swift; sourceTree = "<group>"; };
 		D74C4BCC25D5B69300266F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D74C4BCE25D5B69300266F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D74C4BD125D5B69300266F4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D74C4BD325D5B69300266F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74C4BE125D5C58000266F4F /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		D74C4BE525D5C64500266F4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -149,40 +147,31 @@
 		D74C4BC925D5B69300266F4F /* Moneta */ = {
 			isa = PBXGroup;
 			children = (
+				1A21FE17C255791E3570C8CF /* Resources */,
 				D791854225D85EFB006174DE /* Extensions */,
+				1A21F1D76254136554BFE690 /* Services */,
 				D74C4BEB25D5C81200266F4F /* Models */,
 				D74C4BE025D5C4D400266F4F /* Views */,
 				D74C4BCA25D5B69300266F4F /* MonetaApp.swift */,
 				D74C4BCC25D5B69300266F4F /* ContentView.swift */,
+				D7410BBD25D95A4800771055 /* Environment.swift */,
+				D7A4FD1B25D5CDFD00ECCB31 /* Localizable.strings */,
+				D7410BBC25D959B900771055 /* Config.xcconfig */,
 				D74C4BCE25D5B69300266F4F /* Assets.xcassets */,
 				D74C4BD325D5B69300266F4F /* Info.plist */,
-				D74C4BD025D5B69300266F4F /* Preview Content */,
-				D7A4FD1B25D5CDFD00ECCB31 /* Localizable.strings */,
-				1A21F1D76254136554BFE690 /* Services */,
-				D7410BBC25D959B900771055 /* Config.xcconfig */,
-				D7410BBD25D95A4800771055 /* Environment.swift */,
-				1A21FE17C255791E3570C8CF /* Resources */,
 			);
 			path = Moneta;
-			sourceTree = "<group>";
-		};
-		D74C4BD025D5B69300266F4F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D74C4BD125D5B69300266F4F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D74C4BE025D5C4D400266F4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A21FEEC21D0E8E2D289EB69 /* Modifiers */,
+				1A21F3AC4F66EE912E43F4DA /* Sheets */,
+				1A21FE11B3D861A87B34E642 /* Components */,
 				D74C4BE125D5C58000266F4F /* PortfolioView.swift */,
 				D74C4BE525D5C64500266F4F /* SettingsView.swift */,
 				D74C4BE825D5C65900266F4F /* SearchView.swift */,
-				1A21F3AC4F66EE912E43F4DA /* Sheets */,
-				1A21FE11B3D861A87B34E642 /* Components */,
-				1A21FEEC21D0E8E2D289EB69 /* Modifiers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74C4BD225D5B69300266F4F /* Preview Assets.xcassets in Resources */,
 				D7A4FD1925D5CDFD00ECCB31 /* Localizable.strings in Resources */,
 				D74C4BCF25D5B69300266F4F /* Assets.xcassets in Resources */,
 				1A21FBFC72585C2E9C69FD4F /* fiat.json in Resources */,
@@ -449,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Moneta/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moneta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -471,7 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Moneta/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moneta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
