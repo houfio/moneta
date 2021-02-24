@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var state: StateService
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
         List {
             Section(header: Text("general")) {
-                ListButton(label: "currency", value: viewModel.currentCurrency()!.symbol, action: {
+                ListButton(label: "currency", value: viewModel.currentCurrency(state: state)!.symbol, action: {
                     viewModel.showCurrencies.toggle()
                 })
                     .sheet(isPresented: self.$viewModel.showCurrencies) {
@@ -14,7 +15,7 @@ struct SettingsView: View {
                     }
                 HStack {
                     Text("range")
-                    Picker("range", selection: $viewModel.state.range) {
+                    Picker("range", selection: $state.range) {
                         ForEach(viewModel.ranges, id: \.self) { range in
                             Text(range).tag(range as String?)
                         }
@@ -23,7 +24,7 @@ struct SettingsView: View {
                 }
             }
             Section(header: Text("portfolio")) {
-                Toggle(isOn: self.$viewModel.state.showAmounts) {
+                Toggle(isOn: $state.showAmounts) {
                     Text("show_amounts")
                 }
             }

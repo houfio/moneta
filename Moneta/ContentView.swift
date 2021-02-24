@@ -13,6 +13,7 @@ struct ContentView: View {
                 SettingsView()
             }
         }
+        .environmentObject(StateService())
     }
 }
 

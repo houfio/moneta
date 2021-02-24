@@ -1,19 +1,20 @@
 import SwiftUI
 
 struct SearchView: View {
+    @EnvironmentObject var state: StateService
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List(viewModel.currencies(), id: \.id) { currency in
+        List(viewModel.currencies(state: state), id: \.id) { currency in
             NavigationLink(destination: Text(currency.name)) {
                 HStack {
                     Text(currency.name)
                     Spacer()
-                    Text(viewModel.difference(currency))
+                    Text(viewModel.difference(currency, state: state))
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                         .foregroundColor(Color(.systemBackground))
-                        .background(Color(viewModel.positive(currency) ? .systemGreen : .systemRed))
+                        .background(Color(viewModel.positive(currency, state: state) ? .systemGreen : .systemRed))
                         .clipShape(Capsule())
                 }
             }

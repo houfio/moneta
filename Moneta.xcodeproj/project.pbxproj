@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,6 @@
 		D791854025D85C25006174DE /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791853F25D85C25006174DE /* CurrencyModel.swift */; };
 		D791854425D85F0C006174DE /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791854325D85F0C006174DE /* BundleExtension.swift */; };
 		D7A4FD1925D5CDFD00ECCB31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7A4FD1B25D5CDFD00ECCB31 /* Localizable.strings */; };
-		D7F7C70C25D97F4D00DDA47F /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D7410BB625D94E2400771055 /* Resolver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7F7C70C25D97F4D00DDA47F /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +210,6 @@
 			);
 			name = Moneta;
 			packageProductDependencies = (
-				D7410BB625D94E2400771055 /* Resolver */,
 			);
 			productName = Moneta;
 			productReference = D74C4BC725D5B69300266F4F /* Moneta.app */;
@@ -243,7 +240,6 @@
 			);
 			mainGroup = D74C4BBE25D5B69300266F4F;
 			packageReferences = (
-				D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = D74C4BC825D5B69300266F4F /* Products */;
 			projectDirPath = "";
@@ -496,25 +492,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D7410BB625D94E2400771055 /* Resolver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7410BB525D94E2400771055 /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = Resolver;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D74C4BBF25D5B69300266F4F /* Project object */;
 }
