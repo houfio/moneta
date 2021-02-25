@@ -6,9 +6,14 @@ struct DetailView: View {
     var name: String
 
     var body: some View {
-        VStack {
-            Text("\(id)")
-            ProgressView()
+        ZStack {
+            if data.loading {
+                ProgressView()
+            } else {
+                ScrollView {
+                    Text("\(id)")
+                }
+            }
         }
             .navigationTitle(name)
             .navigationBarItems(trailing: Refresh(loading: data.loading, action: {

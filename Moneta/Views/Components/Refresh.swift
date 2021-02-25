@@ -5,13 +5,11 @@ struct Refresh: View {
     var action: () -> Void
 
     var body: some View {
-        HStack {
-            if loading {
-                ProgressView()
-            } else {
-                Button(action: action) {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                }
+        if loading {
+            ProgressView()
+        } else {
+            Button(action: action) {
+                Image(systemName: "arrow.triangle.2.circlepath")
             }
         }
     }
