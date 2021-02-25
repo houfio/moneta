@@ -1,6 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    var state = StateService()
+    var data = DataService()
+
+    init() {
+        state.initialize(data: data)
+    }
+
     var body: some View {
         TabView {
             Tab(icon: "chart.pie", label: "portfolio", tag: 0) {
@@ -13,7 +20,8 @@ struct ContentView: View {
                 SettingsView()
             }
         }
-        .environmentObject(StateService())
+        .environmentObject(state)
+        .environmentObject(data)
     }
 }
 

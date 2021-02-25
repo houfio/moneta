@@ -2,8 +2,8 @@ import SwiftUI
 
 extension SearchView {
     class ViewModel: SearchBar {
-        func currencies(state: StateService) -> [Cryptocurrency] {
-            state.cryptocurrencies.data.filter { currency in
+        func currencies(data: DataService) -> [Cryptocurrency] {
+            data.cryptocurrencies.data.filter { currency in
                 isSearched(currency)
             }
         }

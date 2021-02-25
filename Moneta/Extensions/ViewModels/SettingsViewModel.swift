@@ -8,8 +8,8 @@ extension SettingsView {
 
         let ranges = ["1h", "24h", "7d"]
 
-        func currentCurrency(state: StateService) -> Currency? {
-            state.currencies.data.first { currency in
+        func currentCurrency(data: DataService, state: StateService) -> Currency? {
+            data.currencies.data.first { currency in
                 isCurrentCurrency(currency, state: state)
             }
         }

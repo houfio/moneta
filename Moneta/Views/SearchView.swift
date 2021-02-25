@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct SearchView: View {
+    @EnvironmentObject var data: DataService
     @EnvironmentObject var state: StateService
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List(viewModel.currencies(state: state), id: \.id) { currency in
+        List(viewModel.currencies(data: data), id: \.id) { currency in
             NavigationLink(destination: Text(currency.name)) {
                 HStack {
                     Text(currency.name)

@@ -1,5 +1,4 @@
 import Foundation
-import Resolver
 
 class StateService: ObservableObject {
     @Published var currency = UserDefaults.standard.integer(forKey: "currency") {
@@ -20,15 +19,9 @@ class StateService: ObservableObject {
         }
     }
 
-    var currencies: Currencies
-    var cryptocurrencies: Cryptocurrencies
-
-    init() {
-        currencies = Bundle.main.decode("fiat.json")
-        cryptocurrencies = Bundle.main.decode("listings.json")
-
+    func initialize(data: DataService) {
         if currency == 0 {
-            currency = currencies.data.first { currency in
+            currency = data.currencies.data.first { currency in
                 currency.symbol == "EUR"
             }!.id
         }

@@ -17,6 +17,7 @@ struct Tab<Content: View>: View {
                 }
             }
             .tag(tag)
+            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -26,7 +27,7 @@ struct Tab_Previews: PreviewProvider {
             Tab(icon: "house", label: "Home", tag: 0) {
                 VStack {
                     Text("Hello, World!")
-                        .navigationBarTitle("Navigation")
+                        .navigationTitle("Navigation")
                     Spacer()
                 }
             }

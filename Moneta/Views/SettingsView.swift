@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var data: DataService
     @EnvironmentObject var state: StateService
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
         List {
             Section(header: Text("general")) {
-                ListButton(label: "currency", value: viewModel.currentCurrency(state: state)!.symbol, action: {
+                ListButton(label: "currency", value: viewModel.currentCurrency(data: data, state: state)!.symbol, action: {
                     viewModel.showCurrencies.toggle()
                 })
                     .sheet(isPresented: self.$viewModel.showCurrencies) {
@@ -21,6 +22,7 @@ struct SettingsView: View {
                         }
                     }
                         .pickerStyle(SegmentedPickerStyle())
+                        .padding(.leading, 10)
                 }
             }
             Section(header: Text("portfolio")) {
