@@ -17,7 +17,6 @@ struct Tab<Content: View>: View {
                 }
             }
             .tag(tag)
-            .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
