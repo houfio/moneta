@@ -7,7 +7,7 @@ struct SearchView: View {
 
     var body: some View {
         List(viewModel.currencies(data: data), id: \.id) { currency in
-            NavigationLink(destination: Text(currency.name)) {
+            NavigationLink(destination: DetailView(id: currency.id, name: currency.name)) {
                 HStack {
                     Text(currency.name)
                     Spacer()
@@ -18,6 +18,7 @@ struct SearchView: View {
                         .background(Color(viewModel.positive(currency, state: state) ? .systemGreen : .systemRed))
                         .clipShape(Capsule())
                 }
+                    .navigationBarItems(trailing: Refresh(loading: data.loading, action: data.refreshCryptocurrencies))
             }
         }
             .navigationTitle("coins")

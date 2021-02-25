@@ -13,7 +13,8 @@ struct CurrencySheet: View {
                     viewModel.showCurrencies = false
                 })
             }
-                .navigationBarTitle(Text("currencies"), displayMode: .inline)
+                .navigationTitle("currencies")
+                .navigationBarTitleDisplayMode(.inline)
                 .listStyle(DefaultListStyle())
         }
     }
