@@ -3,7 +3,11 @@ import SwiftUI
 extension SearchView {
     class ViewModel: SearchBar {
         func currencies(data: DataService) -> [Cryptocurrency] {
-            data.cryptocurrencies.data.filter { currency in
+            guard let cryptocurrencies = data.cryptocurrencies else {
+                fatalError()
+            }
+
+            return cryptocurrencies.data.filter { currency in
                 isSearched(currency)
             }
         }
@@ -30,14 +34,6 @@ extension SearchView {
             default:
                 fatalError()
             }
-        }
-
-        func positive(_ currency: Cryptocurrency, state: StateService) -> Bool {
-            change(currency, state: state) >= 0
-        }
-
-        func difference(_ currency: Cryptocurrency, state: StateService) -> String {
-            "\(String(format: "%.2f", change(currency, state: state)))%"
         }
     }
 }

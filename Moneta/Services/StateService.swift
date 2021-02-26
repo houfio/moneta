@@ -21,9 +21,17 @@ class StateService: ObservableObject {
 
     func initialize(data: DataService) {
         if currency == 0 {
-            currency = data.currencies.data.first { currency in
+            guard let currencies = data.currencies else {
+                fatalError()
+            }
+
+            guard let currency = currencies.data.first(where: { currency in
                 currency.symbol == "EUR"
-            }!.id
+            }) else {
+                fatalError()
+            }
+
+            self.currency = currency.id
         }
 
         if range == nil {

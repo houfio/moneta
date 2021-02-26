@@ -7,11 +7,17 @@ struct CurrencySheet: View {
 
     var body: some View {
         NavigationView {
-            List(data.currencies.data, id: \.id) { currency in
-                SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state), action: {
-                    state.currency = currency.id
-                    viewModel.showCurrencies = false
-                })
+            VStack {
+                if let currencies = data.currencies {
+                    List(currencies.data, id: \.id) { currency in
+                        SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state), action: {
+                            state.currency = currency.id
+                            viewModel.showCurrencies = false
+                        })
+                    }
+                } else {
+                    ProgressView()
+                }
             }
                 .navigationTitle("currencies")
                 .navigationBarTitleDisplayMode(.inline)

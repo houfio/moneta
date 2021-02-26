@@ -6,13 +6,13 @@ struct DetailView: View {
     var name: String
 
     var body: some View {
-        ZStack {
-            if data.loading {
-                ProgressView()
-            } else {
+        VStack {
+            if !data.loading {
                 ScrollView {
                     Text("\(id)")
                 }
+            } else {
+                ProgressView()
             }
         }
             .navigationTitle(name)

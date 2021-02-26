@@ -3,8 +3,8 @@ import Foundation
 class DataService: ObservableObject {
     @Published var loading = false
 
-    @Published var currencies: Currencies
-    @Published var cryptocurrencies: Cryptocurrencies
+    @Published var currencies: Currencies?
+    @Published var cryptocurrencies: Cryptocurrencies?
 
     init() {
         currencies = Bundle.main.decode("fiat.json")

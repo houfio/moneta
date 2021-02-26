@@ -11,17 +11,13 @@ struct SearchView: View {
                 HStack {
                     Text(currency.name)
                     Spacer()
-                    Text(viewModel.difference(currency, state: state))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .foregroundColor(Color(.systemBackground))
-                        .background(Color(viewModel.positive(currency, state: state) ? .systemGreen : .systemRed))
-                        .clipShape(Capsule())
+                    Pill(value: viewModel.change(currency, state: state))
                 }
-                    .navigationBarItems(trailing: Refresh(loading: data.loading, action: data.refreshCryptocurrencies))
             }
         }
+            .listStyle(PlainListStyle())
             .navigationTitle("coins")
+            .navigationBarItems(trailing: Refresh(loading: data.loading, action: data.refreshCryptocurrencies))
             .modifier(SearchBarModifier(searchBar: viewModel))
     }
 }

@@ -9,7 +9,11 @@ extension SettingsView {
         let ranges = ["1h", "24h", "7d"]
 
         func currentCurrency(data: DataService, state: StateService) -> Currency? {
-            data.currencies.data.first { currency in
+            guard let currencies = data.currencies else {
+                fatalError()
+            }
+
+            return currencies.data.first { currency in
                 isCurrentCurrency(currency, state: state)
             }
         }
