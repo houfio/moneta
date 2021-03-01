@@ -12,7 +12,7 @@ struct SettingsView: View {
                     viewModel.showCurrencies.toggle()
                 })
                     .sheet(isPresented: self.$viewModel.showCurrencies) {
-                        CurrencySheet(viewModel: viewModel)
+                        CurrencySheet(data: data, state: state, viewModel: viewModel)
                     }
                 HStack {
                     Text("range")

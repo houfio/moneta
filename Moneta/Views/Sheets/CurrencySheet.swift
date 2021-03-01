@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct CurrencySheet: View {
-    @EnvironmentObject var data: DataService
-    @EnvironmentObject var state: StateService
+    var data: DataService
+    var state: StateService
     var viewModel: SettingsView.ViewModel
 
     var body: some View {
@@ -28,6 +28,6 @@ struct CurrencySheet: View {
 
 struct CurrencySheet_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencySheet(viewModel: SettingsView.ViewModel())
+        CurrencySheet(data: DataService(), state: StateService(), viewModel: SettingsView.ViewModel())
     }
 }
