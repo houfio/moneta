@@ -7,7 +7,7 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-            if !data.loading {
+            if !false {
                 ScrollView {
                     Text("\(id)")
                 }
@@ -16,9 +16,9 @@ struct DetailView: View {
             }
         }
             .navigationTitle(name)
-            .navigationBarItems(trailing: Refresh(loading: data.loading, action: {
-                data.refreshCryptocurrency(id: id)
-            }))
+            .navigationBarItems(trailing: Refresh(loading: false) {
+                data.fetchCryptocurrency(id: id)
+            })
     }
 }
 

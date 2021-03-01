@@ -16,6 +16,7 @@
 		1A21F5C22D3D0731775597F9 /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F683C2402BDBB85CA460 /* Refresh.swift */; };
 		1A21F6E74B931F0BBCA05381 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FF1B7E82380638B465E9 /* StatusModel.swift */; };
 		1A21F74DA6A1AD7AC41A6FD3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F56E1010CD54B093C6A7 /* DetailView.swift */; };
+		1A21F8109460EF2A09734646 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F774F338720046EDDC7E /* PortfolioView.swift */; };
 		1A21F88EC2625F74EFE911BB /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F1705AEC49B914271DAB /* SelectButton.swift */; };
 		1A21F9E1A1A977D70EA778F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F5BB9B710ABA5E57351F /* SearchViewModel.swift */; };
 		1A21FA117D160329FCC421E9 /* SearchBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FD89983CBDACFEEEC167 /* SearchBarModifier.swift */; };
@@ -28,7 +29,6 @@
 		D74C4BCB25D5B69300266F4F /* MonetaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCA25D5B69300266F4F /* MonetaApp.swift */; };
 		D74C4BCD25D5B69300266F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BCC25D5B69300266F4F /* ContentView.swift */; };
 		D74C4BCF25D5B69300266F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74C4BCE25D5B69300266F4F /* Assets.xcassets */; };
-		D74C4BE225D5C58000266F4F /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE125D5C58000266F4F /* PortfolioView.swift */; };
 		D74C4BE625D5C64500266F4F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE525D5C64500266F4F /* SettingsView.swift */; };
 		D74C4BE925D5C65900266F4F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C4BE825D5C65900266F4F /* SearchView.swift */; };
 		D791854025D85C25006174DE /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791853F25D85C25006174DE /* CurrencyModel.swift */; };
@@ -47,6 +47,7 @@
 		1A21F56E1010CD54B093C6A7 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1A21F5BB9B710ABA5E57351F /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1A21F683C2402BDBB85CA460 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
+		1A21F774F338720046EDDC7E /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		1A21F9B5A3C94B7AF74361E8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		1A21FD89983CBDACFEEEC167 /* SearchBarModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarModifier.swift; sourceTree = "<group>"; };
 		1A21FD8DFBDB0D4493A81264 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		D74C4BCC25D5B69300266F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D74C4BCE25D5B69300266F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74C4BD325D5B69300266F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D74C4BE125D5C58000266F4F /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		D74C4BE525D5C64500266F4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D74C4BE825D5C65900266F4F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D791853F25D85C25006174DE /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
@@ -180,10 +180,10 @@
 				1A21FEEC21D0E8E2D289EB69 /* Modifiers */,
 				1A21F3AC4F66EE912E43F4DA /* Sheets */,
 				1A21FE11B3D861A87B34E642 /* Components */,
-				D74C4BE125D5C58000266F4F /* PortfolioView.swift */,
 				D74C4BE525D5C64500266F4F /* SettingsView.swift */,
 				D74C4BE825D5C65900266F4F /* SearchView.swift */,
 				1A21F56E1010CD54B093C6A7 /* DetailView.swift */,
+				1A21F774F338720046EDDC7E /* PortfolioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,7 +288,6 @@
 				D74C4BCB25D5B69300266F4F /* MonetaApp.swift in Sources */,
 				D791854425D85F0C006174DE /* BundleExtension.swift in Sources */,
 				D74C4BE925D5C65900266F4F /* SearchView.swift in Sources */,
-				D74C4BE225D5C58000266F4F /* PortfolioView.swift in Sources */,
 				D7410BBE25D95A4800771055 /* Environment.swift in Sources */,
 				D791854025D85C25006174DE /* CurrencyModel.swift in Sources */,
 				1A21FA477B2BFF50B54005E9 /* StateService.swift in Sources */,
@@ -306,6 +305,7 @@
 				1A21F74DA6A1AD7AC41A6FD3 /* DetailView.swift in Sources */,
 				1A21F5C22D3D0731775597F9 /* Refresh.swift in Sources */,
 				1A21F110120B7F08AD5B22F4 /* Pill.swift in Sources */,
+				1A21F8109460EF2A09734646 /* PortfolioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

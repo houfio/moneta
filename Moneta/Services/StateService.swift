@@ -1,13 +1,13 @@
 import Foundation
 
 class StateService: ObservableObject {
-    @Published var currency = UserDefaults.standard.integer(forKey: "currency") {
+    @Published var currency = UserDefaults.standard.string(forKey: "currency") ?? "EUR" {
         didSet {
             UserDefaults.standard.set(currency, forKey: "currency")
         }
     }
 
-    @Published var range = UserDefaults.standard.string(forKey: "range") {
+    @Published var range = UserDefaults.standard.string(forKey: "range") ?? "24h" {
         didSet {
             UserDefaults.standard.set(range, forKey: "range")
         }
@@ -19,23 +19,9 @@ class StateService: ObservableObject {
         }
     }
 
-    func initialize(data: DataService) {
-        if currency == 0 {
-            guard let currencies = data.currencies else {
-                fatalError()
-            }
-
-            guard let currency = currencies.data.first(where: { currency in
-                currency.symbol == "EUR"
-            }) else {
-                fatalError()
-            }
-
-            self.currency = currency.id
-        }
-
-        if range == nil {
-            range = "24h"
+    @Published var portfolio = UserDefaults.standard.dictionary(forKey: "portfolio") as? [String: String] ?? [:] {
+        didSet {
+            UserDefaults.standard.set(portfolio, forKey: "dictionary")
         }
     }
 }

@@ -6,26 +6,35 @@ struct PortfolioView: View {
 
     var body: some View {
         VStack {
-            if let currencies = data.currencies {
+            if state.portfolio.count > 0 {
                 HStack {
                     Text("€1000.00")
                         .font(.title)
                         .blur(radius: state.showAmounts ? 0 : 10)
+                        .animation(.easeInOut)
+                        .onTapGesture {
+                            state.showAmounts.toggle()
+                        }
                     Pill(value: -1.2)
                 }
                     .padding(.vertical, 20)
                 List {
                     Section(header: Text("coins")) {
-                        Text("Bitcoin")
+                        NavigationLink(destination: DetailView(id: 1, name: "Bitcoin")) {
+                            Text("Bitcoin")
+                        }
                     }
                 }
                     .listStyle(InsetGroupedListStyle())
             } else {
-                ProgressView()
+                Text("empty_portfolio")
+                    .padding()
             }
         }
             .navigationTitle("portfolio")
-            .navigationBarItems(trailing: Refresh(loading: data.loading, action: data.refreshCryptocurrencies))
+            .navigationBarItems(trailing: Refresh(loading: false) {
+                data.fetchCryptocurrencies(state: state)
+            })
     }
 }
 

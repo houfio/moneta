@@ -8,7 +8,7 @@ struct SettingsView: View {
     var body: some View {
         List {
             Section(header: Text("general")) {
-                ListButton(label: "currency", value: viewModel.currentCurrency(data: data, state: state)!.symbol, action: {
+                ListButton(label: "currency", value: viewModel.currentCurrency(data: data, state: state).symbol, action: {
                     viewModel.showCurrencies.toggle()
                 })
                     .sheet(isPresented: self.$viewModel.showCurrencies) {

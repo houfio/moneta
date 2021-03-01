@@ -21,10 +21,9 @@ extension SearchView {
         }
 
         func change(_ currency: Cryptocurrency, state: StateService) -> Double {
-            let range = state.range!
             let quote = currency.quote.first!
 
-            switch range {
+            switch state.range {
             case "1h":
                 return quote.value.percentChange1H
             case "24h":

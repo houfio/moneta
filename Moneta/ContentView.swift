@@ -5,7 +5,7 @@ struct ContentView: View {
     var data = DataService()
 
     init() {
-        state.initialize(data: data)
+        data.initialize(state: state)
     }
 
     var body: some View {

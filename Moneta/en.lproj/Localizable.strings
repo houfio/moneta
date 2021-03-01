@@ -6,3 +6,4 @@
 "currencies" = "Currencies";
 "range" = "Range";
 "show_amounts" = "Show amounts";
+"empty_portfolio" = "Your portfolio is empty.";

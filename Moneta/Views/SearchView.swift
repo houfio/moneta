@@ -17,7 +17,9 @@ struct SearchView: View {
         }
             .listStyle(PlainListStyle())
             .navigationTitle("coins")
-            .navigationBarItems(trailing: Refresh(loading: data.loading, action: data.refreshCryptocurrencies))
+            .navigationBarItems(trailing: Refresh(loading: false) {
+                data.fetchCryptocurrencies(state: state)
+            })
             .modifier(SearchBarModifier(searchBar: viewModel))
     }
 }

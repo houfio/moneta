@@ -11,7 +11,7 @@ struct CurrencySheet: View {
                 if let currencies = data.currencies {
                     List(currencies.data, id: \.id) { currency in
                         SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state), action: {
-                            state.currency = currency.id
+                            state.currency = currency.symbol
                             viewModel.showCurrencies = false
                         })
                     }
