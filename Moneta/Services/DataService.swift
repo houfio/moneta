@@ -4,6 +4,7 @@ import Combine
 class DataService: ObservableObject {
     @Published var currencies: Response<Currency>?
     @Published var listings: Response<Listing>?
+    @Published var loading = false
 
     var cancellables: [AnyCancellable] = []
 
@@ -13,16 +14,20 @@ class DataService: ObservableObject {
     }
 
     func fetchCurrencies() {
+        loading = true
+
         cancellables.append(receiveData("/fiat/map", query: [URLQueryItem(name: "sort", value: "name")]).sink(receiveCompletion: { completion in
-            print(completion)
+            self.loading = self.listings != nil
         }, receiveValue: { data in
             self.currencies = data
         }))
     }
 
     func fetchListings(state: StateService) {
+        loading = true
+
         cancellables.append(receiveData("/cryptocurrency/listings/latest", query: [URLQueryItem(name: "convert", value: "\(state.currency)")]).sink(receiveCompletion: { completion in
-            print(completion)
+            self.loading = false
         }, receiveValue: { data in
             self.listings = data
         }))

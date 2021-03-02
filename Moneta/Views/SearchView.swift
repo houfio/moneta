@@ -24,7 +24,7 @@ struct SearchView: View {
             }
         }
             .navigationTitle("coins")
-            .navigationBarItems(trailing: Refresh(loading: false) {
+            .navigationBarItems(trailing: Refresh(loading: data.loading) {
                 data.fetchListings(state: state)
             })
     }
