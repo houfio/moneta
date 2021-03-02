@@ -9,7 +9,12 @@ struct ListEntry: View {
     var body: some View {
         if let a = action {
             Button(action: a) {
-                list
+                HStack {
+                    list
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 14))
+                        .foregroundColor(Color(.systemGray2))
+                }
             }
         } else {
             list
