@@ -27,8 +27,7 @@ struct AmountSheet: View {
                         .background(Color(.systemGray5))
                         .cornerRadius(10)
                     Button("save") {
-                        state.portfolio[listing.symbol] = text == "0" ? nil : text
-                        viewModel.showAmount = false
+                        viewModel.updatePortfolio(listing, amount: text, state: state)
                     }
                 }
                     .padding(.horizontal)

@@ -20,6 +20,7 @@
 		1A21F74DA6A1AD7AC41A6FD3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F56E1010CD54B093C6A7 /* DetailView.swift */; };
 		1A21F8109460EF2A09734646 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F774F338720046EDDC7E /* PortfolioView.swift */; };
 		1A21F88EC2625F74EFE911BB /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F1705AEC49B914271DAB /* SelectButton.swift */; };
+		1A21F94E55BDD2DF41DD370D /* ViewModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FD6431B72DA42EBBB274 /* ViewModelExtension.swift */; };
 		1A21F9E1A1A977D70EA778F5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F5BB9B710ABA5E57351F /* SearchViewModel.swift */; };
 		1A21FA117D160329FCC421E9 /* SearchBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FD89983CBDACFEEEC167 /* SearchBarModifier.swift */; };
 		1A21FA477B2BFF50B54005E9 /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FE028D5949A2DA3A2859 /* StateService.swift */; };
@@ -57,6 +58,7 @@
 		1A21F774F338720046EDDC7E /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		1A21F88D186CA9A731C88D03 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		1A21F9B5A3C94B7AF74361E8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		1A21FD6431B72DA42EBBB274 /* ViewModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelExtension.swift; sourceTree = "<group>"; };
 		1A21FD89983CBDACFEEEC167 /* SearchBarModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarModifier.swift; sourceTree = "<group>"; };
 		1A21FD8DFBDB0D4493A81264 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		1A21FE028D5949A2DA3A2859 /* StateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateService.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				D791854325D85F0C006174DE /* BundleExtension.swift */,
 				1A21FE56D9B191CEC78C80D6 /* ViewModels */,
+				1A21FD6431B72DA42EBBB274 /* ViewModelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				1A21F0574917F6DF54F18CA8 /* AmountSheet.swift in Sources */,
 				1A21F6929A564E144356C890 /* PortfolioViewModel.swift in Sources */,
 				1A21FEAA24854B3EA199AB76 /* PortfolioModel.swift in Sources */,
+				1A21F94E55BDD2DF41DD370D /* ViewModelExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

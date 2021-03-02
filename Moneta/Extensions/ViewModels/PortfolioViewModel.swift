@@ -2,9 +2,9 @@ import SwiftUI
 
 extension PortfolioView {
     class ViewModel: ObservableObject {
-        func value(data: DataService, state: StateService) -> Double {
-            listings(data: data, state: state).reduce(0) { result, model in
-                guard let q = quote(model.listing, state: state) else {
+        func getTotalValue(data: DataService, state: StateService) -> Double {
+            getListings(data: data, state: state).reduce(0) { result, model in
+                guard let q = getQuote(model.listing, state: state) else {
                     return result
                 }
 
@@ -12,35 +12,22 @@ extension PortfolioView {
             }
         }
 
-        func change(data: DataService, state: StateService) -> Double {
-            let v = value(data: data, state: state)
+        func getTotalChange(data: DataService, state: StateService) -> Double {
+            let value = getTotalValue(data: data, state: state)
 
-            return listings(data: data, state: state).reduce(0) { result, model in
-                guard let q = quote(model.listing, state: state) else {
+            return getListings(data: data, state: state).reduce(0) { result, model in
+                guard let quote = getQuote(model.listing, state: state) else {
                     return result
                 }
 
-                var percent: Double {
-                    switch state.range {
-                    case "1h":
-                        return q.percentChange1H
-                    case "24h":
-                        return q.percentChange24H
-                    case "7d":
-                        return q.percentChange7D
-                    default:
-                        return 0
-                    }
-                }
-                let worth = q.price * model.amount
-                let weight = 1 / v * worth;
-                let weightedPercent = percent * weight;
+                let worth = quote.price * model.amount
+                let weight = 1 / value * worth;
 
-                return result + weightedPercent
+                return result + getChange(model.listing, state: state) * weight
             }
         }
 
-        func listings(data: DataService, state: StateService) -> [PortfolioModel] {
+        func getListings(data: DataService, state: StateService) -> [PortfolioModel] {
             state.portfolio.compactMap { key, value -> PortfolioModel? in
                 guard let listing = data.listings?.data.first(where: { listing in
                     listing.symbol == key
@@ -58,10 +45,8 @@ extension PortfolioView {
             }
         }
 
-        private func quote(_ listing: Listing, state: StateService) -> Quote? {
-            listing.quote.first { key, value in
-                key == state.currency
-            }?.value
+        func isEmpty(state: StateService) -> Bool {
+            state.portfolio.isEmpty
         }
     }
 }

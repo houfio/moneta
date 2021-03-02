@@ -7,13 +7,13 @@ struct SearchView: View {
 
     var body: some View {
         VStack {
-            if let listings = viewModel.listings(data: data) {
+            if let listings = viewModel.getListings(data: data) {
                 List(listings, id: \.id) { listing in
                     NavigationLink(destination: DetailView(listing: listing)) {
                         HStack {
                             Text(listing.name)
                             Spacer()
-                            Pill(value: viewModel.change(listing, state: state))
+                            Pill(value: viewModel.getChange(listing, state: state))
                         }
                     }
                 }

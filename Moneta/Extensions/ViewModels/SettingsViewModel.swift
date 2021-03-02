@@ -17,5 +17,11 @@ extension SettingsView {
         func isCurrentCurrency(_ currency: Currency, state: StateService) -> Bool {
             currency.symbol == state.currency
         }
+
+        func updateCurrency(_ currency: Currency, data: DataService, state: StateService) {
+            state.currency = currency.symbol
+            data.fetchListings(state: state)
+            showCurrencies = false
+        }
     }
 }

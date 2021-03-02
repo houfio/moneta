@@ -8,17 +8,17 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-            PriceHeader(value: viewModel.price(listing, state: state), change: viewModel.change(listing, state: state))
+            PriceHeader(value: viewModel.getPrice(listing, state: state), change: viewModel.getChange(listing, state: state))
             List {
                 Section(header: Text("info")) {
                     ListEntry(icon: "sum", label: "symbol", value: "\(listing.symbol)")
                     ListEntry(icon: "number", label: "ranking", value: "\(listing.cmcRank)")
-                    ListEntry(icon: "arrow.left.arrow.right", label: "market_capitalization", value: viewModel.marketCap(listing, data: data, state: state), wrap: true)
+                    ListEntry(icon: "arrow.left.arrow.right", label: "market_capitalization", value: viewModel.getMarketCap(listing, data: data, state: state), wrap: true)
                     ListEntry(icon: "arrow.clockwise", label: "circulating_supply", value: String(format: "%.2f", listing.circulatingSupply), wrap: true)
                     ListEntry(icon: "arrow.triangle.swap", label: "total_supply", value: String(format: "%.2f", listing.totalSupply), wrap: true)
                 }
                 Section(header: Text("portfolio")) {
-                    ListEntry(icon: "bag", label: "amount", value: state.portfolio[listing.symbol] ?? "0") {
+                    ListEntry(icon: "bag", label: "amount", value: viewModel.getAmount(listing, state: state)) {
                         viewModel.showAmount.toggle()
                     }
                         .sheet(isPresented: $viewModel.showAmount) {

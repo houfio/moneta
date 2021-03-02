@@ -7,17 +7,17 @@ struct PortfolioView: View {
 
     var body: some View {
         VStack {
-            if state.portfolio.count > 0 {
-                PriceHeader(value: viewModel.value(data: data, state: state), change: viewModel.change(data: data, state: state), show: state.showAmounts)
+            if !viewModel.isEmpty(state: state) {
+                PriceHeader(value: viewModel.getTotalValue(data: data, state: state), change: viewModel.getTotalChange(data: data, state: state), show: state.showAmounts)
                 List {
                     Section(header: Text("coins")) {
-                        ForEach(viewModel.listings(data: data, state: state), id: \.listing.id) { data in
+                        ForEach(viewModel.getListings(data: data, state: state), id: \.listing.id) { listing in
                             ZStack {
                                 Button("") {} // https://stackoverflow.com/a/65932011
-                                NavigationLink(destination: DetailView(listing: data.listing)) {
-                                    Text(data.listing.name)
+                                NavigationLink(destination: DetailView(listing: listing.listing)) {
+                                    Text(listing.listing.name)
                                     Spacer()
-                                    Text(String(format: "%.2f", data.amount))
+                                    Text(String(format: "%.2f", listing.amount))
                                         .foregroundColor(Color(.systemGray))
                                 }
                             }
