@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A21F0574917F6DF54F18CA8 /* AmountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F61461285DCBBC04D759 /* AmountSheet.swift */; };
 		1A21F110120B7F08AD5B22F4 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F0A4A02DE4D84DB49162 /* Pill.swift */; };
 		1A21F13D2C0A89C6B2A3EAA6 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F1471D29941E30457526 /* Tab.swift */; };
 		1A21F1FE869298AE46274F9E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FD8DFBDB0D4493A81264 /* SettingsViewModel.swift */; };
@@ -47,6 +48,7 @@
 		1A21F4657D904724E9905F86 /* CurrencySheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySheet.swift; sourceTree = "<group>"; };
 		1A21F56E1010CD54B093C6A7 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1A21F5BB9B710ABA5E57351F /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1A21F61461285DCBBC04D759 /* AmountSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountSheet.swift; sourceTree = "<group>"; };
 		1A21F683C2402BDBB85CA460 /* Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		1A21F774F338720046EDDC7E /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		1A21F88D186CA9A731C88D03 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1A21F4657D904724E9905F86 /* CurrencySheet.swift */,
+				1A21F61461285DCBBC04D759 /* AmountSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				1A21FF79DF049F9F3FADEB6A /* ListEntry.swift in Sources */,
 				1A21F43772822699B5647052 /* PriceHeader.swift in Sources */,
 				1A21FF541070C40A30B6A010 /* DetailViewModel.swift in Sources */,
+				1A21F0574917F6DF54F18CA8 /* AmountSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,19 +451,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moneta/Moneta.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA296MD3UU;
+				DEVELOPMENT_TEAM = C9C432ZZC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moneta/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.houf.Moneta;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.supertask.Moneta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,19 +481,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moneta/Moneta.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = VA296MD3UU;
+				DEVELOPMENT_TEAM = C9C432ZZC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moneta/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.houf.Moneta;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.supertask.Moneta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;

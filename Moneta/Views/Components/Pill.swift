@@ -5,9 +5,9 @@ struct Pill: View {
 
     var body: some View {
         Text("\(value >= 0 ? "+" : "")\(String(format: "%.2f", value))%")
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
             .foregroundColor(Color(.systemBackground))
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
             .background(Color(value >= 0 ? .systemGreen : .systemRed))
             .clipShape(Capsule())
     }

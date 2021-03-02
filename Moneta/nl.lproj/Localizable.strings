@@ -8,5 +8,9 @@
 "show_amounts" = "Bedragen weergeven";
 "empty_portfolio" = "Jouw portefeuille is leeg.";
 "info" = "Info";
+"symbol" = "Symbool";
 "ranking" = "Positie";
+"circulating_supply" = "Circulating Supply";
+"total_supply" = "Total Supply";
 "amount" = "Aantal";
+"update_amount %@" = "Step het aantal %@ dat je in jouw portefeuille hebt in. Dit wordt weergegeven op de thuispagina.";
