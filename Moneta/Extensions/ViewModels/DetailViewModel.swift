@@ -30,6 +30,15 @@ extension DetailView {
             }
         }
 
+        func marketCap(_ listing: Listing, data: DataService, state: StateService) -> String {
+            let cap = quote(listing, state: state)?.marketCap ?? 0
+            let sign = data.currencies?.data.first { currency in
+                currency.symbol == state.currency
+            }?.sign ?? "€"
+
+            return "\(sign)\(String(format: "%.2f", cap))";
+        }
+
         private func quote(_ listing: Listing, state: StateService) -> Quote? {
             listing.quote.first { key, value in
                 key == state.currency

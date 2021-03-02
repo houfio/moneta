@@ -4,6 +4,7 @@ struct ListEntry: View {
     var icon: String
     var label: LocalizedStringKey
     var value: String
+    var wrap: Bool = false
     var action: (() -> Void)? = nil
 
     var body: some View {
@@ -14,6 +15,7 @@ struct ListEntry: View {
                     Image(systemName: "chevron.right")
                         .font(.system(size: 14))
                         .foregroundColor(Color(.systemGray2))
+                        .padding(.leading, 8)
                 }
             }
         } else {
@@ -21,17 +23,45 @@ struct ListEntry: View {
         }
     }
 
-    private var list: some View {
+    @ViewBuilder private var list: some View {
+        if wrap {
+            VStack {
+                HStack {
+                    keyText
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    valueText
+                }
+            }
+                .padding(.vertical, 6)
+        } else {
+            HStack {
+                keyText
+                Spacer()
+                valueText
+            }
+        }
+    }
+
+    private var keyText: some View {
         HStack {
             Image(systemName: icon)
                 .foregroundColor(Color(.systemGray))
                 .frame(width: 20, height: 20)
             Text(label)
                 .foregroundColor(.primary)
-            Spacer()
-            Text(value)
-                .foregroundColor(.primary)
         }
+    }
+
+    private var valueText: some View {
+        Text(value)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Color(.systemGray5))
+            .foregroundColor(.primary)
+            .cornerRadius(10)
     }
 }
 

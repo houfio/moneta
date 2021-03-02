@@ -10,6 +10,7 @@ struct Pill: View {
             .padding(.vertical, 4)
             .background(Color(value >= 0 ? .systemGreen : .systemRed))
             .clipShape(Capsule())
+            .fixedSize()
     }
 }
 

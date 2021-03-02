@@ -13,8 +13,9 @@ struct DetailView: View {
                 Section(header: Text("info")) {
                     ListEntry(icon: "sum", label: "symbol", value: "\(listing.symbol)")
                     ListEntry(icon: "number", label: "ranking", value: "\(listing.cmcRank)")
-                    ListEntry(icon: "arrow.clockwise", label: "circulating_supply", value: "\(String(format: "%.2f", listing.circulatingSupply))")
-                    ListEntry(icon: "arrow.triangle.swap", label: "total_supply", value: "\(String(format: "%.2f", listing.totalSupply))")
+                    ListEntry(icon: "arrow.left.arrow.right", label: "market_capitalization", value: viewModel.marketCap(listing, data: data, state: state), wrap: true)
+                    ListEntry(icon: "arrow.clockwise", label: "circulating_supply", value: String(format: "%.2f", listing.circulatingSupply), wrap: true)
+                    ListEntry(icon: "arrow.triangle.swap", label: "total_supply", value: String(format: "%.2f", listing.totalSupply), wrap: true)
                 }
                 Section(header: Text("portfolio")) {
                     ListEntry(icon: "bag", label: "amount", value: "0") {

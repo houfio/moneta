@@ -10,6 +10,7 @@
 "info" = "Info";
 "symbol" = "Symbol";
 "ranking" = "Ranking";
+"market_capitalization" = "Market capitalization";
 "circulating_supply" = "Circulating Supply";
 "total_supply" = "Total Supply";
 "amount" = "Amount";

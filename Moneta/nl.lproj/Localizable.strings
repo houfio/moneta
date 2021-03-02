@@ -10,6 +10,7 @@
 "info" = "Info";
 "symbol" = "Symbool";
 "ranking" = "Positie";
+"market_capitalization" = "Marktkapitalisatie";
 "circulating_supply" = "Circulerend aanbod";
 "total_supply" = "Totaal aanbod";
 "amount" = "Aantal";
