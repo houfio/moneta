@@ -24,7 +24,7 @@ struct ListButton: View {
 struct ListButton_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            ListButton(label: "Label", value: "Value", action: {})
+            ListButton(label: "Label", value: "Value") {}
         }
     }
 }

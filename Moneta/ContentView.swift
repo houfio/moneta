@@ -20,8 +20,8 @@ struct ContentView: View {
                 SettingsView()
             }
         }
-        .environmentObject(state)
-        .environmentObject(data)
+            .environmentObject(state)
+            .environmentObject(data)
     }
 }
 

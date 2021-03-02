@@ -2,14 +2,14 @@ import Foundation
 import Combine
 
 class DataService: ObservableObject {
-    @Published var currencies: Currencies?
-    @Published var cryptocurrencies: Cryptocurrencies?
-    
+    @Published var currencies: Response<Currency>?
+    @Published var listings: Response<Listing>?
+
     var cancellables: [AnyCancellable] = []
 
     func initialize(state: StateService) {
         fetchCurrencies()
-        fetchCryptocurrencies(state: state)
+        fetchListings(state: state)
     }
 
     func fetchCurrencies() {
@@ -20,15 +20,12 @@ class DataService: ObservableObject {
         }))
     }
 
-    func fetchCryptocurrencies(state: StateService) {
+    func fetchListings(state: StateService) {
         cancellables.append(receiveData("/cryptocurrency/listings/latest", query: [URLQueryItem(name: "convert", value: "\(state.currency)")]).sink(receiveCompletion: { completion in
             print(completion)
         }, receiveValue: { data in
-            self.cryptocurrencies = data
+            self.listings = data
         }))
-    }
-
-    func fetchCryptocurrency(id: Int) {
     }
 
     private func receiveData<T: Decodable>(_ path: String, query: [URLQueryItem] = []) -> AnyPublisher<T, Error> {

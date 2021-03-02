@@ -6,19 +6,19 @@ struct SearchView: View {
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List(viewModel.currencies(data: data), id: \.id) { currency in
-            NavigationLink(destination: DetailView(id: currency.id, name: currency.name)) {
+        List(viewModel.listings(data: data), id: \.id) { listing in
+            NavigationLink(destination: DetailView(listing: listing)) {
                 HStack {
-                    Text(currency.name)
+                    Text(listing.name)
                     Spacer()
-                    Pill(value: viewModel.change(currency, state: state))
+                    Pill(value: viewModel.change(listing, state: state))
                 }
             }
         }
             .listStyle(PlainListStyle())
             .navigationTitle("coins")
             .navigationBarItems(trailing: Refresh(loading: false) {
-                data.fetchCryptocurrencies(state: state)
+                data.fetchListings(state: state)
             })
             .modifier(SearchBarModifier(searchBar: viewModel))
     }

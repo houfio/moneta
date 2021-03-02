@@ -2,28 +2,26 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var data: DataService
-    var id: Int
-    var name: String
+    @EnvironmentObject var state: StateService
+    @ObservedObject var viewModel = ViewModel()
+    var listing: Listing
 
     var body: some View {
         VStack {
-            if !false {
-                ScrollView {
-                    Text("\(id)")
+            PriceHeader(value: viewModel.price(listing, state: state), change: viewModel.change(listing, state: state))
+            List {
+                Section(header: Text("info")) {
+                    ListEntry(icon: "number", label: "ranking", value: "\(listing.cmcRank)")
                 }
-            } else {
-                ProgressView()
             }
+                .listStyle(InsetGroupedListStyle())
         }
-            .navigationTitle(name)
-            .navigationBarItems(trailing: Refresh(loading: false) {
-                data.fetchCryptocurrency(id: id)
-            })
+            .navigationTitle(listing.name)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(id: 1, name: "Bitcoin")
+        DetailView(listing: Listing(id: 1, name: "Bitcoin", symbol: "BTC", slug: "bitcoin", cmcRank: 1, numMarketPairs: 1, circulatingSupply: 1, totalSupply: 1, maxSupply: 1, lastUpdated: "", dateAdded: "", tags: [], platform: nil, quote: [:]))
     }
 }

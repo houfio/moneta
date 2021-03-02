@@ -2,26 +2,26 @@ import SwiftUI
 
 extension SearchView {
     class ViewModel: SearchBar {
-        func currencies(data: DataService) -> [Cryptocurrency] {
-            guard let cryptocurrencies = data.cryptocurrencies else {
+        func listings(data: DataService) -> [Listing] {
+            guard let listings = data.listings else {
                 fatalError()
             }
 
-            return cryptocurrencies.data.filter { currency in
-                isSearched(currency)
+            return listings.data.filter { listing in
+                isSearched(listing)
             }
         }
 
-        func isSearched(_ currency: Cryptocurrency) -> Bool {
+        func isSearched(_ listing: Listing) -> Bool {
             if text.isEmpty {
                 return true
             }
 
-            return currency.name.localizedCaseInsensitiveContains(text) || currency.symbol.localizedCaseInsensitiveContains(text)
+            return listing.name.localizedCaseInsensitiveContains(text) || listing.symbol.localizedCaseInsensitiveContains(text)
         }
 
-        func change(_ currency: Cryptocurrency, state: StateService) -> Double {
-            let quote = currency.quote.first!
+        func change(_ listing: Listing, state: StateService) -> Double {
+            let quote = listing.quote.first!
 
             switch state.range {
             case "1h":

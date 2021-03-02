@@ -1,11 +1,6 @@
 import Foundation
 
-struct Cryptocurrencies: Codable {
-    let data: [Cryptocurrency]
-    let status: Status
-}
-
-struct Cryptocurrency: Codable {
+struct Listing: Codable {
     let id: Int
     let name: String
     let symbol: String

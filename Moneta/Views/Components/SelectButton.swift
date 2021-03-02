@@ -22,6 +22,6 @@ struct SelectButton: View {
 
 struct SelectButton_Previews: PreviewProvider {
     static var previews: some View {
-        SelectButton(label: "Label", value: true, action: {})
+        SelectButton(label: "Label", value: true) {}
     }
 }

@@ -10,10 +10,10 @@ struct CurrencySheet: View {
             VStack {
                 if let currencies = data.currencies {
                     List(currencies.data, id: \.id) { currency in
-                        SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state), action: {
+                        SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state)) {
                             state.currency = currency.symbol
                             viewModel.showCurrencies = false
-                        })
+                        }
                     }
                 } else {
                     ProgressView()

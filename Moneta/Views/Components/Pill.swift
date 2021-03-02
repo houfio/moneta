@@ -4,7 +4,7 @@ struct Pill: View {
     var value: Double
 
     var body: some View {
-        Text("\(String(format: "%.2f", value))%")
+        Text("\(value >= 0 ? "+" : "")\(String(format: "%.2f", value))%")
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .foregroundColor(Color(.systemBackground))
@@ -15,8 +15,6 @@ struct Pill: View {
 
 struct Pill_Previews: PreviewProvider {
     static var previews: some View {
-        List {
-            Pill(value: 100)
-        }
+        Pill(value: 100)
     }
 }
