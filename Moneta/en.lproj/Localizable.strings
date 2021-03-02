@@ -11,8 +11,8 @@
 "symbol" = "Symbol";
 "ranking" = "Ranking";
 "market_capitalization" = "Market capitalization";
-"circulating_supply" = "Circulating Supply";
-"total_supply" = "Total Supply";
+"circulating_supply" = "Circulating supply";
+"total_supply" = "Total supply";
 "amount" = "Amount";
 "update_amount %@" = "Set the amount of %@ you have in your portfolio. This will show up in the home screen.";
 "save" = "Save";
