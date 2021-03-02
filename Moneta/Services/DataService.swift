@@ -30,7 +30,7 @@ class DataService: ObservableObject {
 
     private func receiveData<T: Decodable>(_ path: String, query: [URLQueryItem] = []) -> AnyPublisher<T, Error> {
         guard let url = createURL(path, query: query) else {
-            fatalError()
+            fatalError("invalid url")
         }
 
         let decoder = JSONDecoder()
