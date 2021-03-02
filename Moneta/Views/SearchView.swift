@@ -6,21 +6,27 @@ struct SearchView: View {
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List(viewModel.listings(data: data), id: \.id) { listing in
-            NavigationLink(destination: DetailView(listing: listing)) {
-                HStack {
-                    Text(listing.name)
-                    Spacer()
-                    Pill(value: viewModel.change(listing, state: state))
+        VStack {
+            if let listings = viewModel.listings(data: data) {
+                List(listings, id: \.id) { listing in
+                    NavigationLink(destination: DetailView(listing: listing)) {
+                        HStack {
+                            Text(listing.name)
+                            Spacer()
+                            Pill(value: viewModel.change(listing, state: state))
+                        }
+                    }
                 }
+                    .listStyle(PlainListStyle())
+                    .modifier(SearchBarModifier(searchBar: viewModel))
+            } else {
+                ProgressView()
             }
         }
-            .listStyle(PlainListStyle())
             .navigationTitle("coins")
             .navigationBarItems(trailing: Refresh(loading: false) {
                 data.fetchListings(state: state)
             })
-            .modifier(SearchBarModifier(searchBar: viewModel))
     }
 }
 

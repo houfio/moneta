@@ -13,6 +13,9 @@ struct DetailView: View {
                 Section(header: Text("info")) {
                     ListEntry(icon: "number", label: "ranking", value: "\(listing.cmcRank)")
                 }
+                Section(header: Text("portfolio")) {
+                    ListEntry(icon: "number", label: "amount", value: "0")
+                }
             }
                 .listStyle(InsetGroupedListStyle())
         }

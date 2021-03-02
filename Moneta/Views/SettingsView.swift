@@ -6,33 +6,39 @@ struct SettingsView: View {
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List {
-            Section(header: Text("general")) {
-                ListButton(label: "currency", value: viewModel.currentCurrency(data: data, state: state).symbol) {
-                    viewModel.showCurrencies.toggle()
-                }
-                    .sheet(isPresented: self.$viewModel.showCurrencies) {
-                        CurrencySheet(data: data, state: state, viewModel: viewModel)
-                    }
-                HStack {
-                    Text("range")
-                    Picker("range", selection: $state.range) {
-                        ForEach(viewModel.ranges, id: \.self) { range in
-                            Text(range).tag(range as String?)
+        VStack {
+            if let current = viewModel.currentCurrency(data: data, state: state) {
+                List {
+                    Section(header: Text("general")) {
+                        ListButton(label: "currency", value: current.symbol) {
+                            viewModel.showCurrencies.toggle()
+                        }
+                            .sheet(isPresented: self.$viewModel.showCurrencies) {
+                                CurrencySheet(data: data, state: state, viewModel: viewModel)
+                            }
+                        HStack {
+                            Text("range")
+                            Picker("range", selection: $state.range) {
+                                ForEach(viewModel.ranges, id: \.self) { range in
+                                    Text(range).tag(range as String?)
+                                }
+                            }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .padding(.leading, 10)
                         }
                     }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .padding(.leading, 10)
+                    Section(header: Text("portfolio")) {
+                        Toggle(isOn: $state.showAmounts) {
+                            Text("show_amounts")
+                        }
+                    }
                 }
-            }
-            Section(header: Text("portfolio")) {
-                Toggle(isOn: $state.showAmounts) {
-                    Text("show_amounts")
-                }
+                    .listStyle(InsetGroupedListStyle())
+            } else {
+                ProgressView()
             }
         }
             .navigationTitle("settings")
-            .listStyle(InsetGroupedListStyle())
     }
 }
 

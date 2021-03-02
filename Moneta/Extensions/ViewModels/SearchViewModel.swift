@@ -2,12 +2,8 @@ import SwiftUI
 
 extension SearchView {
     class ViewModel: SearchBar {
-        func listings(data: DataService) -> [Listing] {
-            guard let listings = data.listings else {
-                fatalError()
-            }
-
-            return listings.data.filter { listing in
+        func listings(data: DataService) -> [Listing]? {
+            data.listings?.data.filter { listing in
                 isSearched(listing)
             }
         }
@@ -21,18 +17,24 @@ extension SearchView {
         }
 
         func change(_ listing: Listing, state: StateService) -> Double {
-            let quote = listing.quote.first!
+            let q = quote(listing, state: state)
 
             switch state.range {
             case "1h":
-                return quote.value.percentChange1H
+                return q?.percentChange1H ?? 0
             case "24h":
-                return quote.value.percentChange24H
+                return q?.percentChange24H ?? 0
             case "7d":
-                return quote.value.percentChange7D
+                return q?.percentChange7D ?? 0
             default:
-                fatalError()
+                return 0
             }
+        }
+
+        private func quote(_ listing: Listing, state: StateService) -> Quote? {
+            listing.quote.first { key, value in
+                key == state.currency
+            }?.value
         }
     }
 }
