@@ -18,7 +18,7 @@ struct DetailView: View {
                     ListEntry(icon: "arrow.triangle.swap", label: "total_supply", value: String(format: "%.2f", listing.totalSupply), wrap: true)
                 }
                 Section(header: Text("portfolio")) {
-                    ListEntry(icon: "bag", label: "amount", value: "0") {
+                    ListEntry(icon: "bag", label: "amount", value: state.portfolio[listing.symbol] ?? "0") {
                         viewModel.showAmount.toggle()
                     }
                         .sheet(isPresented: $viewModel.showAmount) {
