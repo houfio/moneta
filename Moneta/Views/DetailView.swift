@@ -8,8 +8,8 @@ struct DetailView: View {
 
     var body: some View {
         VStack {
-            PriceHeader(value: viewModel.getPrice(listing, state: state), change: viewModel.getChange(listing, state: state))
             List {
+                PriceHeader(value: viewModel.getPrice(listing, state: state), change: viewModel.getChange(listing, state: state))
                 Section(header: Text("info")) {
                     ListEntry(icon: "sum", label: "symbol", value: "\(listing.symbol)")
                     ListEntry(icon: "number", label: "ranking", value: "\(listing.cmcRank)")

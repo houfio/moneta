@@ -8,8 +8,8 @@ struct PortfolioView: View {
     var body: some View {
         VStack {
             if !viewModel.isEmpty(state: state) {
-                PriceHeader(value: viewModel.getTotalValue(data: data, state: state), change: viewModel.getTotalChange(data: data, state: state), show: state.showAmounts)
                 List {
+                    PriceHeader(value: viewModel.getTotalValue(data: data, state: state), change: viewModel.getTotalChange(data: data, state: state), show: state.showAmounts)
                     Section(header: Text("coins")) {
                         ForEach(viewModel.getListings(data: data, state: state), id: \.listing.id) { listing in
                             ZStack {

@@ -15,10 +15,12 @@ struct PriceHeader: View {
 
     var body: some View {
         HStack {
+            Spacer()
             Text("\(sign)\(String(format: "%.2f", value))")
                 .font(.title)
                 .blur(radius: show ? 0 : 10)
             Pill(value: change)
+            Spacer()
         }
             .padding(.vertical, 20)
     }
