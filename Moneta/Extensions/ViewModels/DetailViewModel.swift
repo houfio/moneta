@@ -7,7 +7,7 @@ extension DetailView {
 
         func initialize(_ listing: Listing, state: StateService) {
             amount = state.portfolio.first { key, value in
-                key == state.currency
+                key == listing.symbol
             }?.value ?? "0"
         }
 
