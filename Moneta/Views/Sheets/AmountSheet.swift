@@ -3,6 +3,8 @@ import Combine
 
 struct AmountSheet: View {
     @Binding var text: String
+    var state: StateService
+    var viewModel: DetailView.ViewModel
     var listing: Listing
 
     var body: some View {
@@ -25,7 +27,8 @@ struct AmountSheet: View {
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                     Button("save") {
-                        print("save")
+                        state.portfolio[listing.symbol] = text
+                        viewModel.showAmount = false
                     }
                 }
                     .padding(.horizontal)
@@ -38,6 +41,6 @@ struct AmountSheet: View {
 
 struct AmountSheet_Previews: PreviewProvider {
     static var previews: some View {
-        AmountSheet(text: Binding.constant(""), listing: Listing(id: 1, name: "Bitcoin", symbol: "BTC", slug: "bitcoin", cmcRank: 1, numMarketPairs: 1, circulatingSupply: 1, totalSupply: 1, maxSupply: 1, lastUpdated: "", dateAdded: "", tags: [], platform: nil, quote: [:]))
+        AmountSheet(text: Binding.constant(""), state: StateService(), viewModel: DetailView.ViewModel(), listing: Listing(id: 1, name: "Bitcoin", symbol: "BTC", slug: "bitcoin", cmcRank: 1, numMarketPairs: 1, circulatingSupply: 1, totalSupply: 1, maxSupply: 1, lastUpdated: "", dateAdded: "", tags: [], platform: nil, quote: [:]))
     }
 }

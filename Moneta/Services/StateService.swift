@@ -19,9 +19,9 @@ class StateService: ObservableObject {
         }
     }
 
-    @Published var portfolio = UserDefaults.standard.dictionary(forKey: "portfolio") as? [String: String] ?? [:] {
+    @Published var portfolio = UserDefaults.standard.object(forKey: "portfolio") as? [String: String] ?? [:] {
         didSet {
-            UserDefaults.standard.set(portfolio, forKey: "dictionary")
+            UserDefaults.standard.set(portfolio, forKey: "portfolio")
         }
     }
 }

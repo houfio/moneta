@@ -21,7 +21,7 @@ struct DetailView: View {
                         viewModel.showAmount.toggle()
                     }
                         .sheet(isPresented: $viewModel.showAmount) {
-                            AmountSheet(text: $viewModel.amount, listing: listing)
+                            AmountSheet(text: $viewModel.amount, state: state, viewModel: viewModel, listing: listing)
                         }
                 }
             }
