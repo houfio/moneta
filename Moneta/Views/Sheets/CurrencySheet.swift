@@ -12,6 +12,7 @@ struct CurrencySheet: View {
                     List(currencies.data, id: \.id) { currency in
                         SelectButton(label: currency.name.capitalized, value: viewModel.isCurrentCurrency(currency, state: state)) {
                             state.currency = currency.symbol
+                            data.fetchListings(state: state)
                             viewModel.showCurrencies = false
                         }
                     }
