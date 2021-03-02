@@ -3,14 +3,20 @@ import Combine
 
 class DataService: ObservableObject {
     @Published var currencies: Response<Currency>?
-    @Published var listings: Response<Listing>?
+    @Published var listings: Response<Listing>? {
+        didSet {
+            if let encoded = try? JSONEncoder().encode(listings) {
+                UserDefaults.standard.set(encoded, forKey: "listings")
+            }
+        }
+    }
     @Published var loading = false
 
     var cancellables: [AnyCancellable] = []
 
     func initialize(state: StateService) {
         fetchCurrencies()
-        fetchListings(state: state)
+        fetchListings(false, state: state)
     }
 
     func fetchCurrencies() {
@@ -19,7 +25,17 @@ class DataService: ObservableObject {
         }))
     }
 
-    func fetchListings(state: StateService) {
+    func fetchListings(_ force: Bool = true, state: StateService) {
+        if let data = UserDefaults.standard.data(forKey: "listings") {
+            if let decoded = try? JSONDecoder().decode(Response<Listing>.self, from: data) {
+                listings = decoded
+            }
+        }
+
+        if (listings != nil && !force) {
+            return
+        }
+        
         loading = true
 
         cancellables.append(receiveData("/cryptocurrency/listings/latest", query: [URLQueryItem(name: "convert", value: "\(state.currency)")]).sink(receiveCompletion: { completion in
