@@ -10,7 +10,8 @@
 "info" = "Info";
 "symbol" = "Symbool";
 "ranking" = "Positie";
-"circulating_supply" = "Circulating Supply";
-"total_supply" = "Total Supply";
+"circulating_supply" = "Circulerend aanbod";
+"total_supply" = "Totaal aanbod";
 "amount" = "Aantal";
 "update_amount %@" = "Step het aantal %@ dat je in jouw portefeuille hebt in. Dit wordt weergegeven op de thuispagina.";
+"save" = "Opslaan";

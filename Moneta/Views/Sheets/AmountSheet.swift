@@ -8,16 +8,27 @@ struct AmountSheet: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("", text: $text)
-                    .keyboardType(.numberPad)
-                    .padding(8)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding()
+                Image(systemName: "bag.circle.fill")
+                    .foregroundColor(.accentColor)
+                    .font(.system(size: 60))
+                    .padding(.bottom, 4)
                 Text("update_amount \(listing.name)")
                     .font(.footnote)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                HStack {
+                    TextField("", text: $text)
+                        .keyboardType(.numberPad)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                    Button("save") {
+                        print("save")
+                    }
+                }
+                    .padding(.horizontal)
             }
                 .navigationTitle("amount")
                 .navigationBarTitleDisplayMode(.inline)

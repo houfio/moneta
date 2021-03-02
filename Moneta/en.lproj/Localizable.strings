@@ -10,7 +10,8 @@
 "info" = "Info";
 "symbol" = "Symbol";
 "ranking" = "Ranking";
-"circulating_supply" = "Circulerend aanbod";
-"total_supply" = "Totaal aanbod";
+"circulating_supply" = "Circulating Supply";
+"total_supply" = "Total Supply";
 "amount" = "Amount";
 "update_amount %@" = "Set the amount of %@ you have in your portfolio. This will show up in the home screen.";
+"save" = "Save";
