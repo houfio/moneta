@@ -14,11 +14,7 @@ class DataService: ObservableObject {
     }
 
     func fetchCurrencies() {
-        loading = true
-
-        cancellables.append(receiveData("/fiat/map", query: [URLQueryItem(name: "sort", value: "name")]).sink(receiveCompletion: { completion in
-            self.loading = self.listings != nil
-        }, receiveValue: { data in
+        cancellables.append(receiveData("/fiat/map", query: [URLQueryItem(name: "sort", value: "name")]).sink(receiveCompletion: { _ in }, receiveValue: { data in
             self.currencies = data
         }))
     }
