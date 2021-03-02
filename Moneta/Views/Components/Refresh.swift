@@ -18,7 +18,8 @@ struct Refresh: View {
 struct Refresh_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            Refresh(loading: false) {}
+            Refresh(loading: false) {
+            }
         }
     }
 }

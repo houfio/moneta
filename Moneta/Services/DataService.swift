@@ -29,13 +29,13 @@ class DataService: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: "listings") {
             if let decoded = try? JSONDecoder().decode(Response<Listing>.self, from: data) {
                 listings = decoded
+
+                if !force {
+                    return
+                }
             }
         }
 
-        if (listings != nil && !force) {
-            return
-        }
-        
         loading = true
 
         cancellables.append(receiveData("/cryptocurrency/listings/latest", query: [URLQueryItem(name: "convert", value: "\(state.currency)")]).sink(receiveCompletion: { completion in

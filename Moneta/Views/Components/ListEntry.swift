@@ -20,7 +20,7 @@ struct ListEntry: View {
             list
         }
     }
-    
+
     private var list: some View {
         HStack {
             Image(systemName: icon)
