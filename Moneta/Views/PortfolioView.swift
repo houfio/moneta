@@ -8,7 +8,7 @@ struct PortfolioView: View {
     var body: some View {
         VStack {
             if state.portfolio.count > 0 {
-                PriceHeader(value: 1000, change: 1.2, show: state.showAmounts)
+                PriceHeader(value: viewModel.getValue(data: data, state: state), change: 1.2, show: state.showAmounts)
                 List {
                     Section(header: Text("coins")) {
                         ForEach(viewModel.getListings(data: data, state: state), id: \.listing.id) { data in
@@ -16,6 +16,9 @@ struct PortfolioView: View {
                                 Button("") {} // https://stackoverflow.com/a/65932011
                                 NavigationLink(destination: DetailView(listing: data.listing)) {
                                     Text(data.listing.name)
+                                    Spacer()
+                                    Text(String(format: "%.2f", data.amount))
+                                        .foregroundColor(Color(.systemGray))
                                 }
                             }
                         }

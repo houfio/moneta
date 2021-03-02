@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    var state = StateService()
     var data = DataService()
+    var state = StateService()
 
     init() {
         data.initialize(state: state)
@@ -20,8 +20,8 @@ struct ContentView: View {
                 SettingsView()
             }
         }
-            .environmentObject(state)
             .environmentObject(data)
+            .environmentObject(state)
     }
 }
 

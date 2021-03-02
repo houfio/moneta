@@ -24,10 +24,10 @@ struct AmountSheet: View {
                         .keyboardType(.numberPad)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
-                        .background(Color(.systemGray6))
+                        .background(Color(.systemGray5))
                         .cornerRadius(10)
                     Button("save") {
-                        state.portfolio[listing.symbol] = text
+                        state.portfolio[listing.symbol] = text == "0" ? nil : text
                         viewModel.showAmount = false
                     }
                 }
