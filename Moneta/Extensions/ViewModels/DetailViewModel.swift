@@ -21,11 +21,13 @@ extension DetailView {
                 currency.symbol == state.currency
             }?.sign ?? "€"
 
-            return "\(sign)\(String(format: "%.2f", cap))";
+            return "\(sign)\(String(format: "%.2f", cap))"
         }
 
         func getAmount(_ listing: Listing, state: StateService) -> String {
-            state.portfolio[listing.symbol] ?? "0"
+            let value = Double(state.portfolio[listing.symbol] ?? "0") ?? 0
+
+            return String(format: "%.2f", value)
         }
 
         func updatePortfolio(_ listing: Listing, amount: String, state: StateService) {

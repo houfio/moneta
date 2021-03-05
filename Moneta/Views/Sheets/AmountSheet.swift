@@ -29,6 +29,7 @@ struct AmountSheet: View {
                     Button("save") {
                         viewModel.updatePortfolio(listing, amount: text, state: state)
                     }
+                        .disabled(Double(text) == nil)
                 }
                     .padding(.horizontal)
             }

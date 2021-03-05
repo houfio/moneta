@@ -21,7 +21,7 @@ extension PortfolioView {
                 }
 
                 let worth = quote.price * model.amount
-                let weight = 1 / value * worth;
+                let weight = 1 / value * worth
 
                 return result + getChange(model.listing, state: state) * weight
             }
