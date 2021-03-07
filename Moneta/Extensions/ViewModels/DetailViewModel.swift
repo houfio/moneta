@@ -34,5 +34,9 @@ extension DetailView {
             state.portfolio[listing.symbol] = amount == "0" ? nil : amount
             showAmount = false
         }
+        
+        func getDetailUrl(_ listing: Listing) -> String {
+            "https://coinmarketcap.com/currencies/\(listing.slug)/"
+        }
     }
 }

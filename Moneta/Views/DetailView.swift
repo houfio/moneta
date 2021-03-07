@@ -10,7 +10,7 @@ struct DetailView: View {
         VStack {
             List {
                 PriceHeader(value: viewModel.getPrice(listing, state: state), change: viewModel.getChange(listing, state: state))
-                NavigationLink(destination: Web(url: "https://coinmarketcap.com/currencies/\(listing.slug)/").navigationBarTitleDisplayMode(.inline)) {
+                NavigationLink(destination: Web(url: viewModel.getDetailUrl(listing)).navigationBarTitleDisplayMode(.inline)) {
                     Text("details")
                 }
                 Section(header: Text("info")) {
