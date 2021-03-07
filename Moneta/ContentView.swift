@@ -10,13 +10,13 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            Tab(icon: "chart.pie", label: "portfolio", tag: 0) {
+            Tab(icon: "chart.pie", label: "portfolio", tag: 0, style: DefaultNavigationViewStyle()) {
                 PortfolioView()
             }
-            Tab(icon: "magnifyingglass", label: "coins", tag: 1) {
+            Tab(icon: "magnifyingglass", label: "coins", tag: 1, style: DefaultNavigationViewStyle()) {
                 SearchView()
             }
-            Tab(icon: "gearshape", label: "settings", tag: 1) {
+            Tab(icon: "gearshape", label: "settings", tag: 1, style: StackNavigationViewStyle()) {
                 SettingsView()
             }
         }
