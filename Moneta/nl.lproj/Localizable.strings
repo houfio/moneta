@@ -16,3 +16,4 @@
 "amount" = "Aantal";
 "update_amount %@" = "Step het aantal %@ dat je in jouw portefeuille hebt in. Dit wordt weergegeven op de thuispagina.";
 "save" = "Opslaan";
+"details" = "Details";

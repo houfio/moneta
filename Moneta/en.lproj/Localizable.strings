@@ -16,3 +16,4 @@
 "amount" = "Amount";
 "update_amount %@" = "Set the amount of %@ you have in your portfolio. This will show up in the home screen.";
 "save" = "Save";
+"details" = "Details";
